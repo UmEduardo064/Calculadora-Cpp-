@@ -1,13 +1,79 @@
 #include <iostream>
 #include <stdlib.h>
 
-
 using namespace std;
+
+double num1 = 0;
+int tamanho = 0;
+double endd = 0;
+
+void som()
+{
+    cout << "Quantidade de numeros: " << endl;
+    cin >> tamanho;
+
+    for(int i = 1; i <= tamanho; i++)
+    {
+        cout << "|_ ";
+        cin >> num1;
+        endd += num1;
+    }
+
+    cout << "Resposta final: " << endd << endl;
+}
+void sub()
+{
+    cout << "Quantidade de numeros: " << endl;
+    cin >> tamanho;
+
+    for(int i = 1; i <= tamanho; i++)
+    {
+        cout << "|_ ";
+        cin >> num1;
+        endd -= num1;
+    }
+
+    cout << "Resposta final: " << endd << endl;
+}
+void vez()
+{
+    endd = 1;
+
+    cout << "Quantidade de numeros: " << endl;
+    cin >> tamanho;
+
+    for(int i = 1; i <= tamanho; i++)
+    {
+        cout << "|_ ";
+        cin >> num1;
+        endd *= num1;
+    }
+
+    cout << "Resposta final: " << endd << endl;
+}
+void div()
+{
+    endd = 1;
+    cout << "Quantidade de numeros: " << endl;
+    cin >> tamanho;
+
+    cout << "Inicie a Divisao: ";
+    cin >> num1;
+
+    for(int i = 1; i <= tamanho; i++)
+    {
+        cout << "|_ ";
+        cin >> num1;
+        endd /= num1;
+    }
+
+    cout << "Resposta final: " << endd << endl;
+}
 
 int main()
 {
-    int opcao;
-    int num1, num2;
+    char opcao;
+
     bool continuar = true;
     char prosseguir = 'S';
 
@@ -26,39 +92,22 @@ int main()
 
         switch(opcao)
         {
-            case 0:
-                continuar = false;
+            case '0': continuar = false;
             break;
 
-            case 1:
-                cout << "digite dois numeros" << endl;
-                cin >> num1; cin >> num2;
-
-                cout << "Resposta: " << num1+num2 << endl;
+            case '1': som();
             break;
 
-            case 2:
-                cout << "digite dois numeros" << endl;
-                cin >> num1; cin >> num2;
-
-                cout << "Resposta: " << num1-num2 << endl;
+            case '2': sub();
             break;
 
-            case 3:
-                cout << "digite dois numeros" << endl;
-                cin >> num1; cin >> num2;
-
-                cout << "Resposta: " << num1*num2 << endl;
+            case '3': vez();
             break;
 
-            case 4:
-                cout << "digite dois numeros" << endl;
-                cin >> num1; cin >> num2;
-
-                cout << "Resposta: " << num1/num2 << endl;
+            case '4': div();
             break;
 
-            default: cout << "Error" endl;
+            default: cout << "Error" << endl;
         }
 
         cout << "Quer continuar(S/N)" << endl;
