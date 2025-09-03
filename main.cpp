@@ -53,23 +53,50 @@ void vez()
 }
 void div()
 {
-    endd = 1;
+    double resu;
+
     cout << "Quantidade de numeros: " << endl;
     cin >> tamanho;
 
-    cout << "Inicie a Divisao: ";
-    cin >> num1;
+    if(tamanho < 1)
+    {
+        cout << "Quantidade invalida" << endl;
+        return;
+    }
 
-    for(int i = 1; i <= tamanho; i++)
+    cout << "Digite o Primeiro numero: " << endl;
+    cin >> resu;
+
+    for(int i = 1; i < tamanho; i++)
     {
         cout << "|_ ";
         cin >> num1;
-        endd /= num1;
+
+        resu /= num1;
     }
 
-    cout << "Resposta final: " << endd << endl;
+    cout << "Resposta final: " << resu << endl;
 }
+void Fatorial()
+{
+    long resu = 1;
 
+    cout << "Digite um um numero para fatorar: " << endl;
+    cin >> num1;
+
+    if(num1 <= 0)
+    {
+        cout << "Erro" << endl;
+        return;
+    }
+
+    for(int i = 1; i <= num1; i++)
+        resu *= i;
+
+        cout << "|_ " << resu << endl;
+
+
+}
 int main()
 {
     char opcao;
@@ -85,6 +112,7 @@ int main()
         cout << "2(-)" << endl;
         cout << "3(*)" << endl;
         cout << "4(/)" << endl;
+        cout << "5(!)" << endl;
         cout << " " << endl;
         cout << "0(Sair)" << endl;
 
@@ -105,6 +133,9 @@ int main()
             break;
 
             case '4': div();
+            break;
+
+            case '5': Fatorial();
             break;
 
             default: cout << "Error" << endl;
